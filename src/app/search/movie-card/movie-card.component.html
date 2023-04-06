@@ -1,0 +1,8 @@
+<div class="card">
+  <img [src]="'assets/poster/' + movie.poster + '.jpg'" alt="Poster" style="width:100%">
+  <div class="card-container">
+    <!-- TODO Add the navigation here -->
+    <h4><a [routerLink]="['/movie', movie.id]">{{ movie.title }}</a></h4>
+    <p>rating: {{ movie.rating }} / 5</p>
+  </div>
+</div>
