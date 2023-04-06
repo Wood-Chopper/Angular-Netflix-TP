@@ -24,7 +24,7 @@ describe('MoviesService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should filter based on rating', (done) => {
+  it('should filter based on rating', () => {
     // TODO fix this test
     // Arrange
     let filters: MovieFilters = {
@@ -47,15 +47,12 @@ describe('MoviesService', () => {
       } as Movie
     ];
 
-    spyOn(httpClient, 'get').mockImplementation(() => of(mockData));
-
     // Act
     let result$ = service.getFilteredMovies$(filters);
 
     // Assert
     result$.subscribe(result => {
       expect(result.length).toBe(2);
-      done();
     })
   })
 });

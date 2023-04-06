@@ -1,8 +1,8 @@
 <div class="filters">
   <form (ngSubmit)="search()">
+    <!-- TODO Something is missing on those filters -->
     <label for="genre">Movie genre</label>
-    <!-- TODO Something is missing on this filter -->
-    <select id="genre" [(ngModel)]="movieFilters.genre" name="genre">
+    <select id="genre" name="genre">
       <option [value]="'All Movies'">All Movies</option>
       <option [value]="'Crime'">Crime</option>
       <option [value]="'Romance'">Romance</option>
@@ -15,7 +15,7 @@
       <option [value]="'Western'">Western</option>
     </select><br/>
     <label for="minimumRate">Minimum rating</label>
-    <input id="minimumRate" [(ngModel)]="movieFilters.minimumRate" type="number" name="minimumRate"/>
+    <input id="minimumRate" type="number" name="minimumRate"/>
     <button type="submit">Search</button>
   </form>
 </div>
@@ -23,17 +23,11 @@
 <div class="movie-list">
   <ng-container *ngIf="movies$ | async as movies">
 
-    <ng-container *ngIf="movies.length > 0">
-      <!-- There are movies to display -->
-      <ng-container *ngFor="let movie of movies">
-        <app-movie-card [movie]="movie"></app-movie-card>
-      </ng-container>
+    <ng-container *ngFor="let movie of movies">
+      <app-movie-card [movie]="movie"></app-movie-card>
     </ng-container>
 
-    <ng-container *ngIf="movies.length == 0">
-      <!-- TODO There is no movie to display -->
-      No movie to display
-    </ng-container>
+    <!-- TODO if there is no movie to show - display a little message -->
 
   </ng-container>
 </div>

@@ -3,7 +3,6 @@ import {ActivatedRouteSnapshot, RouterModule, RouterStateSnapshot, Routes} from 
 import {SearchComponent} from "./search/search.component";
 import {MovieComponent} from "./movie/movie.component";
 import {MoviesService} from "./service/movies.service";
-import {NotFoundComponent} from "./not-found/not-found.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
@@ -18,7 +17,6 @@ const routes: Routes = [
       }
     }
   },
-  { path: '**', component: NotFoundComponent }
   // TODO Create a routing here to display a "Page not found" message. The route should match any path
 ];
 

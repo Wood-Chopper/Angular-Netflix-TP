@@ -11,11 +11,6 @@ import {Movie} from "../model/movie.model";
 })
 export class SearchComponent {
 
-  movieFilters: MovieFilters = {
-    genre: 'All Movies',
-    minimumRate: 0
-  }
-
   movies$: Subject<Movie[]> = new Subject<Movie[]>();
 
   constructor(private moviesService: MoviesService) {
@@ -27,9 +22,5 @@ export class SearchComponent {
 
   search() {
     // TODO Implement this method
-    this.moviesService.getFilteredMovies$(this.movieFilters)
-      .subscribe(movies => {
-        this.movies$.next(movies);
-      });
   }
 }

@@ -1,4 +1,3 @@
 export interface MovieFilters {
-  genre: string,
-  minimumRate: number
+  // TODO add your filters variable here
 }

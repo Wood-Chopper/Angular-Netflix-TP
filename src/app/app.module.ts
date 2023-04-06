@@ -8,15 +8,13 @@ import { MovieComponent } from './movie/movie.component';
 import {HttpClientModule} from "@angular/common/http";
 import { MovieCardComponent } from './search/movie-card/movie-card.component';
 import {FormsModule} from "@angular/forms";
-import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     MovieComponent,
-    MovieCardComponent,
-    NotFoundComponent
+    MovieCardComponent
   ],
     imports: [
         BrowserModule,
